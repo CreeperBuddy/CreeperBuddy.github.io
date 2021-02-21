@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/styles/style.css" />
+    <link rel="stylesheet" href="/css/styles/simplebar.css" />
+    <link rel="icon" href="/images/Logo2.svg" type="image/svg" />
+    <title>My Portfolio | Creeper Buddy</title>
+    <style>
+      body {
+        height: 100vh;
+        overflow: auto;
+      }
+
+      .white-space {
+        display: block;
+        padding: 150px 0;
+      }
+
+      .black-main {
+        background-color: #1c1d21;
+        height: 40vh;
+        width: 100%;
+        min-height: 215px;
+        z-index: -1;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .skew {
+        background-color: #1c1d21;
+        width: 100%;
+        height: 48vh;
+        min-height: 250px;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        transform: skewY(-2.5deg);
+      }
+
+      .button-text-white {
+        color: #1c1d21;
+        font-family: "Brandon", sans-serif;
+        letter-spacing: 2px;
+        width: 100%;
+        font-size: 35px;
+        transition: 350ms ease;
+      }
+
+      .button-white::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0;
+        background-color: #1c1d21;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        transition: 350ms ease;
+      }
+
+      .button-white:hover::before {
+        width: 100%;
+      }
+
+      .button-white:hover .button-text-white,
+      .button-white:hover #btmWhite {
+        color: #fff;
+      }
+
+      .button-white {
+        padding: 2px 10px;
+        text-decoration: none;
+        position: relative;
+        cursor: pointer;
+        width: fit-content;
+        text-align: center;
+        z-index: 1;
+        text-decoration: none;
+        background-color: #fff;
+        border: 2px solid #1c1d21;
+        justify-self: center;
+        margin: auto;
+        align-items: center;
+        justify-items: center;
+      }
+
+      #btmWhite {
+        display: none;
+        font-size: 35px;
+        color: #1c1d21;
+        font-family: "Brandon", sans-serif;
+        letter-spacing: 2px;
+        width: 100%;
+        transition: 300ms ease;
+      }
+
+      .style-link-two {
+        margin: auto;
+      }
+
+      section {
+        padding: 20px;
+        margin: 0;
+      }
+
+      .under-skew {
+        background-color: #17ca96;
+        width: 100%;
+        height: 49vh;
+        min-height: 250px;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        position: absolute;
+        transform: skewY(15.5deg);
+      }
+
+      #inputF,
+      #inputP,
+      #inputT {
+        display: none;
+      }
+
+      .p-create,
+      .p-create-two {
+        background-image: url("/images/create.svg");
+        background-position: center;
+        width: 56px;
+        height: 56px;
+        border-radius: 100%;
+        cursor: pointer;
+        margin: 0 auto;
+        margin-left: 40px;
+        display: block;
+        border: none;
+        margin-top: 200px;
+      }
+
+      .p-create-two {
+        width: 45px;
+        height: 45px;
+        margin-top: 20px;
+        margin-left: 45px;
+        background-size: contain;
+      }
+
+      .form-column {
+        max-width: 600px;
+        width: 90%;
+        height: 90%;
+        margin: 0 auto;
+        position: relative;
+        background: #fff;
+      }
+
+      .form-content {
+        display: grid;
+        height: 100%;
+        justify-items: center;
+        align-items: center;
+      }
+
+      .form-exit,
+      .form-exit-two {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        padding: 0 10px;
+        height: fit-content;
+        font-size: 50px;
+        cursor: pointer;
+      }
+
+      .form-exit:hover {
+        color: #ff0000;
+      }
+
+      .input-wrapper {
+        position: relative;
+        margin: auto;
+        width: 90%;
+        height: 64px;
+      }
+
+      .labelF {
+        pointer-events: all;
+        width: fit-content;
+        height: fit-content;
+        padding: 5px 20px;
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+        border: 1px solid #1c1d21;
+        font-size: 20px;
+        font-family: "Brandon", sans-serif;
+        transition-duration: 200ms;
+      }
+
+      .labelF:hover {
+        color: #fff;
+        background-color: #1c1d21;
+      }
+
+      .labelF span.invalid {
+        width: 50vw;
+        bottom: -115%;
+      }
+
+      h1.empty {
+        color: #aaa;
+        margin: 400px auto;
+        width: fit-content;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      .project-card {
+        display: grid;
+        grid-template-rows: auto auto;
+        margin: 100px auto;
+        max-width: 500px;
+        border-radius: 15px;
+        margin-bottom: 250px;
+        position: relative;
+        text-decoration: none;
+        color: #000;
+      }
+
+      .project-card .card-button {
+        font-size: 30px;
+        width: 100%;
+        text-align: center;
+        color: #1c1d21;
+        border: 1px solid #1c1d21;
+        border-radius: 5px;
+        margin: 30px auto;
+        text-decoration: none;
+        padding: 10px 20px;
+        padding-top: 15px;
+        font-family: "Futura-M", sans-serif;
+        transition: 150ms ease-in;
+      }
+
+      .card-button:hover {
+        background-color: #1c1d21;
+        color: #fff;
+      }
+
+      .img-link img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        transition: 300ms ease;
+      }
+
+      .img-link {
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+
+      .img-link:hover::after {
+        opacity: 1;
+        filter: blur(0);
+      }
+
+      .img-link::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-position: center;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+        background-image: url("/images/bg-card.svg");
+        pointer-events: none;
+        transition: 200ms ease-in-out;
+        opacity: 0;
+        filter: blur(50%);
+      }
+
+      input {
+        width: 100%;
+        margin-left: 7px;
+        height: 100%;
+        border: none;
+        padding-top: 25px;
+        font-size: 15px;
+        font-family: "Brandon", sans-serif;
+      }
+
+      label {
+        position: absolute;
+        pointer-events: none;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px solid #1c1d21;
+      }
+
+      label::after {
+        content: "";
+        position: absolute;
+        display: block;
+        bottom: -2px;
+        left: 0;
+        border-radius: 5px;
+        width: 0;
+        height: 3px;
+        background-color: #1c1d21;
+        transition: 200ms ease-in-out;
+      }
+
+      .inner-label {
+        position: absolute;
+        bottom: 4px;
+        left: 6px;
+        font-size: 20px;
+        font-family: "Brandon", sans-serif;
+        transition: 200ms ease-in-out;
+      }
+
+      .delete {
+        text-decoration: none;
+        font-family: "Brandon", sans-serif;
+        background-color: #1c1d21;
+        padding: 5px 15px;
+        width: fit-content;
+        color: #fff;
+        letter-spacing: 0.1em;
+        cursor: pointer;
+        border: 0 solid transparent;
+        margin-bottom: 20px;
+        border-radius: 3px;
+        display: block;
+      }
+
+      input:focus + label::after {
+        width: 100%;
+      }
+
+      input:focus + label span.inner-label {
+        bottom: 34px;
+        left: 0;
+        font-size: 16px;
+      }
+
+      input[data-state="valid"] + label span.inner-label {
+        color: #39ca86;
+        bottom: 34px;
+        left: 0;
+        font-size: 16px;
+      }
+
+      input[data-state="valid"] + label::after {
+        background-color: #39ca86;
+      }
+
+      input[data-state="valid"] + label {
+        border-bottom-color: #39ca86;
+      }
+
+      input[data-state="valid"] + label span.invalid {
+        display: none;
+      }
+
+      input[data-state="validBox"] + label {
+        color: #39ca86;
+        border-color: #39ca86;
+      }
+
+      input[data-state="validBox"] + label:hover {
+        background-color: #39ca86;
+      }
+
+      input[data-state="validBox"] + label span.invalid {
+        display: none;
+      }
+
+      input[data-state="validHalloween"] + label span.inner-label {
+        color: #857aff;
+        bottom: 34px;
+        left: 0;
+        font-size: 16px;
+      }
+
+      input[data-state="validHalloween"] + label::after {
+        background-color: #857aff;
+      }
+
+      input[data-state="validHalloween"] + label {
+        border-bottom-color: #857aff;
+      }
+
+      input[data-state="validHalloween"] + label span.invalid {
+        display: none;
+      }
+
+      input[data-state="validChristmas"] + label span.inner-label {
+        color: #6fc9ff;
+        bottom: 34px;
+        left: 0;
+        font-size: 16px;
+      }
+
+      input[data-state="validChristmas"] + label::after {
+        background-color: #6fc9ff;
+      }
+
+      input[data-state="validChristmas"] + label {
+        border-bottom-color: #6fc9ff;
+      }
+
+      input[data-state="validChristmas"] + label span.invalid {
+        display: none;
+      }
+
+      input[data-state="validHalloweenBox"] + label {
+        color: #857aff;
+        border-color: #857aff;
+      }
+
+      input[data-state="validHalloweenBox"] + label:hover {
+        background-color: #857aff;
+      }
+
+      input[data-state="validHalloweenBox"] + label span.invalid {
+        display: none;
+      }
+
+      input[data-state="validChristmasBox"] + label {
+        color: #6fc9ff;
+        border-color: #6fc9ff;
+      }
+
+      input[data-state="validChristmasBox"] + label:hover {
+        background-color: #6fc9ff;
+      }
+
+      input[data-state="validChristmasBox"] + label span.invalid {
+        display: none;
+      }
+
+      input[data-state="invalid"] + label span.inner-label {
+        color: #ff0436;
+      }
+
+      input[data-state="invalid"] + label::after {
+        background-color: #ff0436;
+      }
+
+      input[data-state="invalid"] + label {
+        border-bottom-color: #ff0436;
+      }
+
+      input[data-state="invalid"] + label span.invalid {
+        display: block;
+      }
+
+      input[data-state="invalidBox"] + label span.invalid {
+        display: block;
+      }
+
+      input[data-state="invalidBox"] + label {
+        border-color: #ff0436;
+        color: #ff0436;
+      }
+
+      input[data-state="invalidBox"] + label:hover {
+        background: #ff0436;
+      }
+
+      input[data-state="deactivated"] + label {
+        background: #aaa;
+        border-bottom: #fff;
+        pointer-events: all;
+      }
+
+      input[data-state="deactivated"] + label span.inner-label {
+        color: #eee;
+      }
+
+      input[data-state="deactivatedBox"] + label {
+        border: #666;
+        background: #aaa;
+        color: #fff;
+        pointer-events: none;
+      }
+
+      input[data-state="optional"] + label span.inner-label {
+        font-size: 20px;
+        color: #1c1d21;
+        bottom: 4px;
+        left: 6px;
+      }
+
+      input[data-state="optional"] + label::after {
+        color: #1c1d21;
+      }
+
+      input[data-state="optional"] + label {
+        border-bottom-color: #1c1d21;
+      }
+
+      input[data-state="optional"] + label span.invalid {
+        display: none;
+      }
+
+      input[data-state="enabled"] + label span.inner-label {
+        font-size: 16px;
+        bottom: 34px;
+        left: 0px;
+      }
+
+      input[data-state="in-range"] + label span.inner-label {
+        color: #ff0436;
+        bottom: 34px;
+        left: 0px;
+        font-size: 16px;
+      }
+
+      input[data-state="in-range"] + label::after {
+        background-color: #ff0436;
+      }
+
+      input[data-state="in-range"] + label {
+        border-bottom-color: #ff0436;
+      }
+
+      input[data-state="in-range"] + label span.invalidFormat {
+        display: block;
+      }
+
+      .invalid,
+      .invalidFormat {
+        font-size: 19px;
+        color: #b80125;
+        font-family: "Brandon", sans-serif;
+        position: absolute;
+        display: none;
+        left: 0;
+        pointer-events: none;
+        bottom: -70%;
+      }
+
+      .modal,
+      .modal-two {
+        width: 100%;
+        height: 100%;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        position: fixed;
+        top: 0;
+        z-index: 8;
+        background: #00000099;
+      }
+
+      @media only screen and (max-width: 550px) {
+        .project-card {
+          width: 90.909090909090909090909090909091%;
+        }
+      }
+
+      @media only screen and (max-width: 750px) {
+        .style-link-two {
+          margin: auto;
+        }
+      }
+
+      @media only screen and (max-width: 594px) {
+        .button-text,
+        .button-text-white {
+          display: none;
+        }
+
+        #btm,
+        #btmWhite {
+          display: block;
+        }
+      }
+
+      @media only screen and (max-width: 460px) {
+        .grid-column img {
+          margin: 90px auto;
+        }
+      }
+    </style>
+  </head>
+  <body class="html-hamburger">
+    <header>
+      <div class="title-wrapper">
+        <a class="title website" href="/"
+          ><span class="title-span-one">Creeper Buddy</span
+          ><span class="title-span-two">CB</span></a
+        >
+      </div>
+      <a class="style-link website" href="/portfolio/">Portfolio</a>
+      <a class="style-link website" href="/about/">About</a>
+      <a class="style-link website" href="/contact/">Contact</a>
+      <div id="burger-button">
+        <span id="b-one"></span>
+        <span id="b-two"></span>
+        <span id="b-three"></span>
+      </div>
+      <div id="burger-container">
+        <div id="burger-inner-container">
+          <a href="/" class="burger-link website" id="burger-link-one">Home</a>
+          <a href="/portfolio/" class="burger-link green website" id="burger-link-two"
+            >Portfolio</a
+          >
+          <a href="/about/" class="burger-link website" id="burger-link-three">About</a>
+          <a href="/contact/" class="burger-link website" id="burger-link-four"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <span class="transition"></span>
+      <section class="black-main">
+        <h1>Portfol<span class="green">io</span></h1>
+        <div class="skew"></div>
+        <div class="under-skew"></div>
+        <div class="under-skew-two"></div>
+      </section>
+      <h1 class="empty">Coming Soon...</h1>
+    </main>
+    <footer>
+      <strong>Let's Get in Touch</strong>
+      <a href="/contact/" class="style-link-two website">My Contact Form</a>
+      <a href="#" target="_blank" class="style-link-two website">cb@creeperbuddy.com</a>
+      <script src="/js/themeSelection.js"></script>
+      <script src="/js/burger.js"></script>
+      <script defer src="/js/pageTrans.js"></script>
+      <script src="/js/simplebar.min.js"></script>
+      <noscript>
+        <style>
+          /**
+    * Reinstate scrolling for non-JS clients
+    */
+          .simplebar-content-wrapper {
+            overflow: auto;
+          }
+
+          ::-webkit-scrollbar {
+            display: none;
+          }
+
+          html {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        </style>
+      </noscript>
+      <script>
+        new SimpleBar(document.querySelector("body"), { timeout: 450 });
+      </script>
+    </footer>
+  </body>
+</html>
