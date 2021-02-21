@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles/style.css" />
+    <link rel="stylesheet" href="/css/styles/simplebar.css" />
+    <link rel="icon" href="/images/Logo2.svg" type="image/svg" />
+    <meta
+      name="description"
+      content="I am Creeper Buddy! Learn more about me and my work in game development through here."
+    />
+    <title>Game Development | Creeper Buddy</title>
+    <style>
+      body {
+        height: 100vh;
+        overflow: auto;
+        background-color: #39ca8699;
+      }
+
+      main {
+        display: flex;
+        min-height: 91vh;
+        align-self: center;
+        justify-self: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .main-grid {
+        display: grid;
+        padding: 20px;
+        padding-top: 10%;
+        padding-bottom: 10%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px;
+        grid-row-gap: 40px;
+      }
+
+      h1,
+      p {
+        margin: auto;
+        max-width: 800px;
+      }
+
+      .style-link-two {
+        margin: auto;
+      }
+
+      footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-row-gap: 40px;
+        padding: 20px;
+        width: 100%;
+        margin-top: 0;
+        bottom: 0;
+        left: 0;
+        background-color: transparent;
+        align-items: center;
+        grid-template-rows: 50px;
+      }
+
+      footer::after,
+      footer::before {
+        display: none;
+      }
+
+      footer strong {
+        margin: auto;
+      }
+
+      @media only screen and (max-width: 958px) {
+        .main-grid {
+          padding-top: 130px;
+          padding-bottom: 99px;
+        }
+      }
+
+      @media only screen and (max-width: 879px) {
+        footer {
+          text-align: center;
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(3, 50px);
+        }
+
+        footer strong {
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body class="html-hamburger">
+    <header>
+      <div class="title-wrapper">
+        <a class="title website" href="/"
+          ><span class="title-span-one">Creeper Buddy</span
+          ><span class="title-span-two">CB</span></a
+        >
+      </div>
+      <a class="style-link website" href="/portfolio/">Portfolio</a>
+      <a class="style-link website" href="/about/">About</a>
+      <a class="style-link website" href="/contact/">Contact</a>
+      <div id="burger-button">
+        <span id="b-one"></span>
+        <span id="b-two"></span>
+        <span id="b-three"></span>
+      </div>
+      <div id="burger-container">
+        <div id="burger-inner-container">
+          <a href="/" class="burger-link website" id="burger-link-one">Home</a>
+          <a href="/portfolio/" class="burger-link website" id="burger-link-two"
+            >Portfolio</a
+          >
+          <a
+            href="/about/"
+            class="burger-link green website"
+            id="burger-link-three"
+            >About</a
+          >
+          <a href="/contact/" class="burger-link website" id="burger-link-four"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <span class="transition"></span>
+      <section class="main-grid">
+        <h1>Game Development</h1>
+        <p>
+          As of recently I have started creating video games in Unity. For those
+          who don't know, Unity is an awesome game engine that creates both 2D
+          and 3D games. It utilizes C# as its programming language, and is
+          largely used to create fun physics-based games.
+        </p>
+        <p>
+          Web-dev is my main direction as of now but game-dev is also an
+          exciting option. Personally, video games are fun and in them you can
+          express so much creativity and detail to really drive home an
+          enjoyable and memorable experience.
+        </p>
+        <p>
+          In today's modern climate, resources are at our fingertips and the
+          possibilites to create and explore are virtually endless. I have
+          always had a passion in creating video games but had never fully
+          started on it. Now with the Unity game engine I am utilizing that
+          creative interest to construct fun projects and mini games.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <strong>Let's Get in Touch</strong>
+      <a href="/contact/" class="style-link-two website">My Contact Form</a>
+      <a href="#" target="_blank" class="style-link-two website"
+        >cb@creeperbuddy.com</a
+      >
+      <noscript>
+        <style>
+          /**
+    * Reinstate scrolling for non-JS clients
+    */
+          .simplebar-content-wrapper {
+            overflow: auto;
+          }
+
+          ::-webkit-scrollbar {
+            display: none;
+          }
+
+          html {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        </style>
+      </noscript>
+      <script src="/js/themeSelection.js"></script>
+      <script src="/js/simplebar.min.js"></script>
+      <script src="/js/burger.js"></script>
+      <script defer src="/js/pageTrans.js"></script>
+      <script>
+        new SimpleBar(document.querySelector("body"), {
+          timeout: 450,
+        });
+      </script>
+    </footer>
+  </body>
+</html>

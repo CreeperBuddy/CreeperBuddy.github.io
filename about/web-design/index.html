@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles/style.css" />
+    <link rel="stylesheet" href="/css/styles/simplebar.css" />
+    <link rel="icon" href="/images/Logo2.svg" type="image/svg" />
+    <meta
+      name="description"
+      content="I am Creeper Buddy! Learn more about me and my work in design and web-layout through here."
+    />
+    <title>Web Design | Creeper Buddy</title>
+    <style>
+      body {
+        height: 100vh;
+        overflow: auto;
+        background-color: #39ca8699;
+      }
+
+      main {
+        display: grid;
+        padding: 20px;
+        padding-top: 10%;
+        padding-bottom: 10%;
+        margin: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px;
+        grid-row-gap: 40px;
+      }
+
+      h1,
+      p {
+        margin: auto;
+        max-width: 800px;
+      }
+
+      .style-link-two {
+        margin: auto;
+      }
+
+      footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-row-gap: 40px;
+        padding: 20px;
+        width: 100%;
+        margin-top: 0;
+        bottom: 0;
+        left: 0;
+        background-color: transparent;
+        align-items: center;
+        grid-template-rows: 50px;
+      }
+
+      footer::after,
+      footer::before {
+        display: none;
+      }
+
+      footer strong {
+        margin: auto;
+      }
+
+      @media only screen and (max-width: 958px) {
+        main {
+          padding-top: 130px;
+          padding-bottom: 99px;
+        }
+      }
+
+      @media only screen and (max-width: 879px) {
+        footer {
+          text-align: center;
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(3, 50px);
+        }
+
+        footer strong {
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body class="html-hamburger">
+    <header>
+      <div class="title-wrapper">
+        <a class="title website" href="/"
+          ><span class="title-span-one">Creeper Buddy</span
+          ><span class="title-span-two">CB</span></a
+        >
+      </div>
+      <a class="style-link website" href="/portfolio/">Portfolio</a>
+      <a class="style-link website" href="/about/">About</a>
+      <a class="style-link website" href="/contact/">Contact</a>
+      <div id="burger-button">
+        <span id="b-one"></span>
+        <span id="b-two"></span>
+        <span id="b-three"></span>
+      </div>
+      <div id="burger-container">
+        <div id="burger-inner-container">
+          <a href="/" class="burger-link website" id="burger-link-one">Home</a>
+          <a href="/portfolio/" class="burger-link website" id="burger-link-two"
+            >Portfolio</a
+          >
+          <a
+            href="/about/"
+            class="burger-link green website"
+            id="burger-link-three"
+            >About</a
+          >
+          <a href="/contact/" class="burger-link website" id="burger-link-four"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <span class="transition"></span>
+      <h1>Web Design</h1>
+      <p>
+        Web-layout is a delicate art. Design is the bread and butter of any
+        website and truly goes to make a whole cohesive experience. Needless to
+        say, this aspect of web-development is important and even more so on a
+        viewer's first impression. A visitor on your site decides wether to stay
+        or leave in only a matter of seconds. As you may have guessed, this is
+        highly dependent on design.
+      </p>
+      <p>
+        Design has such an impact on your visitors because it creates a sense
+        trust and security when moving between pages. Great design not only
+        creates trust between the viewer and the website but it also sparks
+        interest and curiosity. Creativity in design through the implementation
+        of unique elements will immediatley subconsiously prompt the viewer to
+        explore further.
+      </p>
+      <p>
+        This is why I highly value quality layout in my websites. I strive to
+        create trust and ignite curiosity in the user that only great design can
+        offer. I love experimenting in this department of web-development and
+        innovating creative and unique design elements that best suit the needs
+        of my clients and their projects. Through the use of syncrhonous color
+        palletes, simplistic / easily-navigable layout, and various creative
+        elements, I aim to provide remarkable web-layout that elevates your
+        projects to exclusivity.
+      </p>
+    </main>
+    <footer>
+      <strong>Let's Get in Touch</strong>
+      <a href="/contact/" class="style-link-two website">My Contact Form</a>
+      <a href="#" target="_blank" class="style-link-two website"
+        >cb@creeperbuddy.com</a
+      >
+      <noscript>
+        <style>
+          /**
+    * Reinstate scrolling for non-JS clients
+    */
+          .simplebar-content-wrapper {
+            overflow: auto;
+          }
+
+          ::-webkit-scrollbar {
+            display: none;
+          }
+
+          html {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        </style>
+      </noscript>
+      <script src="/js/themeSelection.js"></script>
+      <script src="/js/simplebar.min.js"></script>
+      <script src="/js/burger.js"></script>
+      <script defer src="/js/pageTrans.js"></script>
+      <script>
+        new SimpleBar(document.querySelector("body"), {
+          timeout: 450,
+        });
+      </script>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Let's get in touch. You can contact me here if you're just dropping in a comment or want to start working on your projects together."
+    />
+    <link rel="stylesheet" href="/css/styles/style.css" />
+    <link rel="stylesheet" href="/css/styles/simplebar.css" />
+    <link rel="icon" href="/images/Logo2.svg" />
+    <title>Contact Me | Creeper Buddy</title>
+    <style>
+      body {
+        height: 100vh;
+        overflow: auto;
+      }
+
+      .black-main {
+        background-color: #1c1d21;
+        height: 40vh;
+        width: 100%;
+        z-index: -1;
+        min-height: 200px;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .skew {
+        background-color: #1c1d21;
+        width: 100%;
+        height: 48vh;
+        min-height: 250px;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        transform: skewY(3.5deg);
+      }
+
+      .form-column {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        max-width: 900px;
+        margin: 0 auto;
+        margin-bottom: 150px;
+        position: relative;
+      }
+
+      .input-wrapper {
+        position: relative;
+        margin: 100px auto;
+        width: 90%;
+        height: 64px;
+      }
+
+      footer {
+        grid-template-columns: 1fr;
+      }
+
+      @media only screen and (max-width: 750px) {
+        footer {
+          text-align: center;
+          grid-template-columns: 1fr;
+          grid-template-rows: 95px;
+        }
+
+        footer::before {
+          top: -30%;
+        }
+      }
+
+      input {
+        width: 100%;
+        margin-left: 7px;
+        height: 100%;
+        border: none;
+        padding-top: 25px;
+        font-size: 15px;
+        font-family: "Brandon", sans-serif;
+      }
+
+      label {
+        position: absolute;
+        pointer-events: none;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px solid #1c1d21;
+      }
+
+      label::after {
+        content: "";
+        position: absolute;
+        display: block;
+        bottom: -2px;
+        left: 0;
+        border-radius: 5px;
+        width: 0;
+        height: 3px;
+        background-color: #1c1d21;
+        transition: 200ms ease-in-out;
+      }
+
+      .inner-label {
+        position: absolute;
+        bottom: 4px;
+        left: 6px;
+        font-size: 20px;
+        font-family: "Brandon", sans-serif;
+        transition: 200ms ease-in-out;
+      }
+
+      input:focus + label::after {
+        width: 100%;
+      }
+
+      input:focus + label span.inner-label {
+        bottom: 34px;
+        left: 0;
+        font-size: 16px;
+      }
+
+      input:focus + label span.optional {
+        left: 11px;
+        opacity: 1;
+      }
+
+      input[data-state="valid"] + label span.inner-label {
+        color: #39ca86;
+        bottom: 34px;
+        left: 0;
+        font-size: 16px;
+      }
+
+      input[data-state="valid"] + label::after {
+        background-color: #39ca86;
+      }
+
+      input[data-state="valid"] + label {
+        border-bottom-color: #39ca86;
+      }
+
+      input[data-state="valid"] + label span.invalid {
+        display: none;
+      }
+
+      input[data-state="validHalloween"] + label span.inner-label {
+        color: #857aff;
+        bottom: 34px;
+        left: 0;
+        font-size: 16px;
+      }
+
+      input[data-state="validHalloween"] + label::after {
+        background-color: #857aff;
+      }
+
+      input[data-state="validHalloween"] + label {
+        border-bottom-color: #857aff;
+      }
+
+      input[data-state="validHalloween"] + label span.invalid {
+        display: none;
+      }
+
+      input[data-state="validChristmas"] + label span.inner-label {
+        color: #6fc9ff;
+        bottom: 34px;
+        left: 0;
+        font-size: 16px;
+      }
+
+      input[data-state="validChristmas"] + label::after {
+        background-color: #6fc9ff;
+      }
+
+      input[data-state="validChristmas"] + label {
+        border-bottom-color: #6fc9ff;
+      }
+
+      input[data-state="validChristmas"] + label span.invalid {
+        display: none;
+      }
+
+      input[data-state="invalid"] + label span.inner-label {
+        color: #ff0436;
+      }
+
+      input[data-state="invalid"] + label::after {
+        background-color: #ff0436;
+      }
+
+      input[data-state="invalid"] + label {
+        border-bottom-color: #ff0436;
+      }
+
+      input[data-state="invalid"] + label span.invalid {
+        display: block;
+      }
+
+      input[data-state="optional"] + label span.inner-label {
+        font-size: 20px;
+        color: #1c1d21;
+        bottom: 4px;
+        left: 6px;
+      }
+
+      input[data-state="optional"] + label::after {
+        color: #1c1d21;
+      }
+
+      input[data-state="optional"] + label {
+        border-bottom-color: #1c1d21;
+      }
+
+      input[data-state="optional"] + label span.invalid {
+        display: none;
+      }
+
+      input[data-state="enabled"] + label span.inner-label {
+        font-size: 16px;
+        bottom: 34px;
+        left: 0px;
+      }
+
+      input[data-state="in-range"] + label span.inner-label {
+        color: #ff0436;
+        bottom: 34px;
+        left: 0px;
+        font-size: 16px;
+      }
+
+      input[data-state="in-range"] + label::after {
+        background-color: #ff0436;
+      }
+
+      input[data-state="in-range"] + label {
+        border-bottom-color: #ff0436;
+      }
+
+      input[data-state="in-range"] + label span.invalid {
+        display: block;
+      }
+
+      .optional {
+        color: #ccc;
+        position: absolute;
+        font-family: "Brandon", sans-serif;
+        bottom: 7px;
+        left: 0;
+        font-size: 17px;
+        opacity: 0;
+        transition: 120ms ease;
+      }
+
+      .invalid {
+        font-size: 19px;
+        color: #b80125;
+        font-family: "Brandon", sans-serif;
+        position: absolute;
+        display: none;
+        left: 0;
+        bottom: -70%;
+      }
+
+      #formError {
+        position: absolute;
+        background: #ff0436;
+        border: 2px solid #ff0436;
+        border-radius: 10px;
+        display: none;
+        padding: 10px;
+        pointer-events: none;
+        top: -10%;
+        text-align: center;
+        width: 95%;
+        color: #fff;
+        font-family: "Futura-M", sans-serif;
+        font-size: 21px;
+      }
+
+      #formSuccess {
+        position: absolute;
+        background: #39ca86;
+        display: none;
+        pointer-events: none;
+        border: 2px solid #39ca86;
+        border-radius: 10px;
+        padding: 10px;
+        top: -10%;
+        text-align: center;
+        width: 95%;
+        color: #fff;
+        font-family: "Futura-M", sans-serif;
+        font-size: 21px;
+      }
+
+      .notify-title {
+        font-family: "Brandon", sans-serif;
+        font-size: 35px;
+        display: block;
+      }
+
+      .button-text-white {
+        color: #1c1d21;
+        border: 2px solid #1c1d21;
+        padding: 2px 10px;
+        font-family: "Brandon", sans-serif;
+        letter-spacing: 2px;
+        width: 100%;
+        font-size: 35px;
+        transition: 350ms ease;
+      }
+
+      .button-white:hover .button-text-white,
+      .button-white:hover #btmWhite {
+        background-color: #1c1d21;
+      }
+
+      .button-white:hover .button-text-white,
+      .button-white:hover #btmWhite {
+        color: #fff;
+      }
+
+      .button-white {
+        padding: 6px 14px;
+        margin: 100px auto;
+        margin-bottom: 0px;
+        cursor: pointer;
+        text-decoration: none;
+        position: relative;
+        width: fit-content;
+        text-align: center;
+        z-index: 1;
+        text-decoration: none;
+        background-color: #fff;
+        border: none;
+        justify-self: center;
+        align-items: center;
+        justify-items: center;
+      }
+
+      #btmWhite {
+        display: none;
+        border: 2px solid #1c1d21;
+        padding: 2px 10px;
+        font-size: 35px;
+        color: #1c1d21;
+        font-family: "Brandon", sans-serif;
+        letter-spacing: 2px;
+        width: 100%;
+        transition: 300ms ease;
+      }
+
+      section {
+        padding: 20px;
+        margin: 110px 0;
+      }
+
+      .thanks-section {
+        padding: 20px;
+        margin: 220px auto;
+        margin-bottom: 50px;
+        max-width: 600px;
+      }
+
+      .under-skew {
+        background-color: #17ca96;
+        width: 100%;
+        height: 49vh;
+        min-height: 250px;
+        z-index: -2;
+        top: 0;
+        position: absolute;
+        transform: skewY(-5.5deg);
+      }
+
+      p {
+        margin-top: 50px;
+      }
+
+      @media screen and (max-width: 475px) {
+        p {
+          text-align: center;
+        }
+      }
+
+      @media screen and (max-width: 594px) {
+        #btmWhite {
+          display: block;
+        }
+        .button-text-white {
+          display: none;
+        }
+      }
+
+      @media screen and (max-width: 564px) {
+        #emailInvalid {
+          bottom: -111.6%;
+        }
+      }
+
+      @media screen and (max-width: 431px) {
+        .button-white {
+          width: 90%;
+        }
+      }
+
+      @media screen and (max-width: 294px) {
+        #emailInvalid {
+          bottom: -153%;
+        }
+      }
+
+      @media screen and (max-width: 269px) {
+        #formError span,
+        #formSuccess span {
+          display: none;
+        }
+
+        .notify-title {
+          display: block !important;
+        }
+      }
+
+      @media screen and (max-width: 200px) {
+        #emailInvalid {
+          bottom: -197%;
+        }
+      }
+    </style>
+  </head>
+  <body class="html-hamburger" data-simplebar>
+    <header>
+      <div class="title-wrapper">
+        <a class="title website" href="/"
+          ><span class="title-span-one">Creeper Buddy</span
+          ><span class="title-span-two">CB</span></a
+        >
+      </div>
+      <a class="style-link website" href="/portfolio/">Portfolio</a>
+      <a class="style-link website" href="/about/">About</a>
+      <a class="style-link website" href="/contact/">Contact</a>
+      <div id="burger-button">
+        <span id="b-one"></span>
+        <span id="b-two"></span>
+        <span id="b-three"></span>
+      </div>
+      <div id="burger-container">
+        <div id="burger-inner-container">
+          <a href="/" class="burger-link website" id="burger-link-one">Home</a>
+          <a href="/portfolio/" class="burger-link website" id="burger-link-two"
+            >Portfolio</a
+          >
+          <a href="/about/" class="burger-link website" id="burger-link-three"
+            >About</a
+          >
+          <a
+            href="/contact/"
+            class="burger-link green website"
+            id="burger-link-four"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <span class="transition"></span>
+      <section class="black-main">
+        <h1>Cont<span class="green">act</span></h1>
+        <div class="skew"></div>
+        <div class="under-skew"></div>
+      </section>
+      <section class="thanks-section">
+        <h1 class="black">Hey There! 👋</h1>
+        <p class="black">
+          Thanks for taking the time to reach out to me! Whether you're just
+          dropping a quick comment, a helpful critique or really wanting to
+          start working together, I appreciate your positive support and effort.
+          <br />
+          <br />
+          Additionally, you can always contact me at
+          <a
+            href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJNwflVmBdVdtxMKwkVtlNWKXQgjlVMlPZcpPrVlGCxGghTmHlLZtLjtWnVbzgvdMGzXbSV"
+            target="_blank"
+            class="style-link-two common-link"
+            >cb@creeperbuddy.com</a
+          >
+        </p>
+      </section>
+      <form
+        method="POST"
+        onsubmit="return formFunction()"
+        action="/php/formrequest.php"
+        name="messageForm"
+        class="form-column"
+      >
+        <div id="formError">
+          <span class="notify-title">Form Processing Error</span>
+          <span>An error occured while processing your input data</span>
+        </div>
+        <div id="formSuccess">
+          <span class="notify-title">Mail Sent Confirmation</span>
+          <span>Your email has been successfully processed and sent</span>
+        </div>
+        <div class="input-wrapper">
+          <input id="inputI" type="text" name="name" autocomplete="off" />
+          <label for="inputI">
+            <span class="inner-label">Name</span>
+            <span class="invalid">Please provide your name</span>
+          </label>
+        </div>
+        <div class="input-wrapper">
+          <input id="inputE" type="text" name="email" autocomplete="off" />
+          <label for="inputE">
+            <span class="inner-label inner-label-email">Email</span>
+            <span class="invalid" id="emailInvalid"
+              >This email address is incorrectly formatted: E.g.
+              you@business.com</span
+            >
+            <span class="optional">Optional</span>
+          </label>
+        </div>
+        <div class="input-wrapper">
+          <input id="inputII" type="text" name="subject" autocomplete="off" />
+          <label for="inputII">
+            <span class="inner-label">Subject</span>
+            <span class="invalid">Please detail your subject</span>
+          </label>
+        </div>
+        <div class="input-wrapper">
+          <input id="inputIII" type="text" name="message" autocomplete="off" />
+          <label for="inputIII">
+            <span class="inner-label">Message</span>
+            <span class="invalid">Please write your message</span>
+          </label>
+        </div>
+        <button type="submit" name="submitted" class="button-white">
+          <span class="button-text-white">Send to Creeper Buddy</span>
+          <span id="btmWhite">Submit</span>
+        </button>
+      </form>
+    </main>
+    <footer>
+      <strong>Thanks You For Contacting Me!</strong>
+      <noscript>
+        <style>
+          /**
+    * Reinstate scrolling for non-JS clients
+    */
+          .simplebar-content-wrapper {
+            overflow: auto;
+          }
+
+          ::-webkit-scrollbar {
+            display: none;
+          }
+
+          html {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        </style>
+      </noscript>
+      <script src="/js/contact.js"></script>
+      <script src="/js/themeSelection.js"></script>
+      <script src="/js/burger.js"></script>
+      <script src="/js/simplebar.min.js"></script>
+      <script defer src="/js/pageTrans.js"></script>
+      <script>
+        new SimpleBar(document.querySelector("body"), {
+          timeout: 450,
+        });
+      </script>
+    </footer>
+  </body>
+</html>
