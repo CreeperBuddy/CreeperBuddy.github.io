@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="canonical" href="https://creeperbuddy.com" />
+    <link rel="stylesheet" href="/css/styles/style.css" type="text/css" />
+    <link rel="icon" href="/images/ErrorLogo.svg" type="image/svg" />
+    <title>Error 403 | Kicked from server</title>
+    <style>
+      main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        background-color: #1c1d21;
+      }
+      h1 {
+        font-family: "Brandon";
+        margin-top: auto;
+        z-index: 2;
+      }
+      h2 {
+        font-size: large;
+        margin-bottom: 50px;
+        z-index: 2;
+        line-height: 30px;
+        text-align: center;
+      }
+      h2 em {
+        font-size: small;
+      }
+      img {
+        margin: 30px;
+        margin-bottom: 40px;
+        width: 75vw;
+        max-width: 162px;
+      }
+      .under-skew {
+        background-color: #17ca96;
+        width: 100%;
+        height: 49vh;
+        top: -37vh;
+        position: absolute;
+        transform: skewY(10.5deg);
+      }
+      .button-text-white {
+        color: #fff;
+        border: 2px solid #fff;
+        padding: 2px 10px;
+        font-family: "Brandon", sans-serif;
+        letter-spacing: 2px;
+        width: 100%;
+        font-size: 30px;
+        transition: 350ms ease;
+      }
+
+      .button-white:hover .button-text-white,
+      .button-white:hover #btmWhite {
+        background-color: #fff;
+      }
+
+      .button-white:hover .button-text-white,
+      .button-white:hover #btmWhite {
+        color: #000;
+      }
+
+      .button-white {
+        padding: 6px 14px;
+        margin: 25px auto;
+        margin-bottom: 0px;
+        cursor: pointer;
+        text-decoration: none;
+        position: relative;
+        width: fit-content;
+        text-align: center;
+        z-index: 1;
+        text-decoration: none;
+        border: none;
+        justify-self: center;
+        align-items: center;
+        justify-items: center;
+      }
+
+      @media only screen and (max-width: 420px) {
+        #back-link {
+          display: none;
+        }
+        img {
+          transform: scale(0.75);
+          margin: 20px;
+          margin-bottom: 30px;
+        }
+      }
+      @media only screen and (max-width: 215px) {
+        h2 {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body class="html-hamburger">
+    <header>
+      <div class="title-wrapper">
+        <a class="title website" href="/"
+          ><span class="title-span-one">Creeper Buddy</span
+          ><span class="title-span-two">CB</span></a
+        >
+      </div>
+      <a class="style-link website" href="/portfolio/">Portfolio</a>
+      <a class="style-link website" href="/about/">About</a>
+      <a class="style-link website" href="/contact/">Contact</a>
+      <div id="burger-button">
+        <span id="b-one"></span>
+        <span id="b-two"></span>
+        <span id="b-three"></span>
+      </div>
+    </header>
+    <div id="burger-container">
+      <div id="burger-inner-container">
+        <a href="/" class="burger-link website" id="burger-link-one">Home</a>
+        <a href="/portfolio/" class="burger-link website" id="burger-link-two"
+          >Portfolio</a
+        >
+        <a
+          href="/about/"
+          class="burger-link green website"
+          id="burger-link-three"
+          >About</a
+        >
+        <a href="/contact/" class="burger-link website" id="burger-link-four"
+          >Contact</a
+        >
+      </div>
+    </div>
+    <main>
+      <div class="under-skew"></div>
+      <h1>Error 403</h1>
+      <h2>
+        <strong>Directory Access Denied</strong> <br />
+        <em>Kicked from server</em>
+      </h2>
+      <img
+        src="/images/CreeperIsometric.svg"
+        alt="Creeper Buddy in an Isometric View"
+      />
+
+      <a id="back-link" class="button-white website">
+        <span class="button-text-white">Respawn at Previous Page</span>
+      </a>
+      <a href="/?titlescreen" class="button-white" style="margin-bottom: auto">
+        <span class="button-text-white website" style="font-size: 20px"
+          >Back to Title Screen</span
+        >
+      </a>
+    </main>
+
+    <footer>
+      <script src="/js/referBack.js"></script>
+      <script src="/js/burger.js"></script>
+    </footer>
+  </body>
+</html>

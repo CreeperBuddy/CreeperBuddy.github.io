@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Hello! I'm a freelance web-developer who goes by the alias of Creeper Buddy. I am fluent in front-end web development and often practice in HTML, CSS, and Javascript. I value functionality and sleek/minimalistic design. Let's get in-touch and start creating something awesome."
+    />
+    <link rel="canonical" href="https://creeperbuddy.netlify.app/" />
+    <link rel="stylesheet" href="/css/styles/style.css" type="text/css" />
+    <link rel="icon" href="/images/Logo2.svg" type="image/svg" />
+    <title>Creeper Buddy | Freelance Developer</title>
+    <style>
+      html {
+        scroll-behavior: auto;
+      }
+
+      footer {
+        display: none;
+      }
+
+      #notifyPolkUser {
+        background-color: #fffffffc;
+        display: none;
+        flex-direction: column;
+        top: 0;
+        left: 0;
+        padding: 20px;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        height: 100vh;
+        z-index: 8;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        transition: 350ms ease-in-out;
+        transition-delay: 400ms;
+      }
+
+      #notifyPolkUser h1,
+      #notifyPolkUser p,
+      #notifyPolkUser ul,
+      #notifyPolkUser button,
+      #notifyPolkUser strong {
+        transition: 250ms ease-out;
+      }
+
+      #notifyPolkUser h1,
+      #notifyPolkUser p,
+      #notifyPolkUser li {
+        color: #000;
+      }
+
+      #notifyPolkUser p,
+      #notifyPolkUser li {
+        text-align: center;
+        max-width: 600px;
+        font-size: 14.5px;
+        margin: auto;
+        font-family: "Quicksand", sans-serif;
+      }
+
+      #notifyPolkUser p strong {
+        color: #000;
+      }
+
+      #notifyPolkUser li {
+        max-width: 500px;
+        width: fit-content;
+        font-size: 14px;
+        text-align: left;
+        margin: 30px auto;
+        line-height: 35px;
+      }
+
+      #notifyPolkUser h1 {
+        margin-bottom: 50px;
+      }
+
+      #notifyPolkUser button {
+        margin-top: 10px;
+      }
+
+      .button-text-white {
+        color: #1c1d21;
+        border: 2px solid #1c1d21;
+        padding: 2px 10px;
+        font-family: "Brandon", sans-serif;
+        letter-spacing: 2px;
+        width: 100%;
+        font-size: 35px;
+        transition: 350ms ease;
+      }
+
+      .button-white:hover .button-text-white,
+      .button-white:hover #btmWhite {
+        background-color: #1c1d21;
+      }
+
+      .button-white:hover .button-text-white,
+      .button-white:hover #btmWhite {
+        color: #fff;
+      }
+
+      .button-white {
+        padding: 6px 14px;
+        margin: 100px auto;
+        margin-bottom: 0px;
+        cursor: pointer;
+        text-decoration: none;
+        position: relative;
+        width: fit-content;
+        text-align: center;
+        z-index: 1;
+        text-decoration: none;
+        background-color: #fff;
+        border: none;
+        justify-self: center;
+        align-items: center;
+        justify-items: center;
+      }
+
+      #btmWhite {
+        display: none;
+        border: 2px solid #1c1d21;
+        padding: 2px 10px;
+        font-size: 35px;
+        color: #1c1d21;
+        font-family: "Brandon", sans-serif;
+        letter-spacing: 2px;
+        width: 100%;
+        transition: 300ms ease;
+      }
+
+      .logo-animate-wrapper {
+        height: 100vh;
+        width: 100%;
+        background-color: #1c1d21;
+        overflow: hidden;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 10;
+        animation: 300ms lift ease-out forwards;
+        animation-delay: 1.85s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform-origin: bottom;
+      }
+
+      .logo-lift-two {
+        height: 100vh;
+        width: 100%;
+        background-color: #17ca97;
+        position: fixed;
+        top: 0;
+        left: 0;
+        animation: 200ms lift2 ease-out forwards;
+        animation-delay: 2.5s;
+        z-index: 10;
+        transform-origin: bottom;
+      }
+
+      .logo-lift {
+        height: 100vh;
+        width: 100%;
+        background-color: #1c1d21;
+        position: fixed;
+        top: 0;
+        left: 0;
+        animation: 300ms lift2 ease-out forwards;
+        animation-delay: 2.3s;
+        z-index: 10;
+        transform-origin: bottom;
+      }
+
+      #C {
+        stroke-dasharray: 1412.0709228515625;
+        stroke-dashoffset: 1412.0709228515625;
+        animation: 850ms draw ease-out forwards;
+      }
+
+      #B {
+        stroke-dasharray: 550.708984375;
+        stroke-dashoffset: 550.708984375;
+        animation: 1s draw ease-out forwards;
+      }
+
+      #Dot {
+        stroke-dasharray: 125.63787078857422;
+        stroke-dashoffset: 125.63787078857422;
+        animation: 650ms draw ease-out forwards;
+      }
+
+      #C,
+      #B,
+      #Dot {
+        animation-delay: 500ms;
+      }
+
+      @keyframes tag {
+        to {
+          left: 0;
+        }
+      }
+
+      @keyframes lift {
+        99% {
+          opacity: 0;
+          height: 100vh;
+        }
+
+        to {
+          opacity: 0;
+          height: 0;
+          visibility: hidden;
+        }
+      }
+
+      @keyframes lift2 {
+        to {
+          height: 0;
+        }
+      }
+
+      @keyframes draw {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      #firstScene {
+        pointer-events: none;
+      }
+
+      #secondScene {
+        max-width: 120vh;
+        width: 90%;
+        pointer-events: none;
+        height: fit-content;
+        margin: auto;
+      }
+
+      .layer {
+        pointer-events: none;
+      }
+
+      .section {
+        height: 100vh;
+        display: flex;
+        width: 100%;
+      }
+
+      .welcome {
+        height: 50vh;
+        width: 100%;
+      }
+
+      @media screen and (max-width: 594px) {
+        #btmWhite {
+          display: block;
+        }
+        .button-text-white {
+          display: none;
+        }
+      }
+
+      @media screen and (max-height: 780px) {
+        #notifyPolkUser p {
+          display: none;
+        }
+      }
+
+      @media screen and (max-height: 638px) {
+        #notifyPolkUser h1 {
+          margin-bottom: 0;
+        }
+      }
+
+      @media screen and (max-height: 638px) {
+        #notifyPolkUser h1 {
+          margin-bottom: 0;
+        }
+      }
+
+      @media screen and (max-width: 348px) {
+        #notifyPolkUser li {
+          margin-left: 10px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          margin-right: auto;
+        }
+      }
+
+      @media screen and (max-height: 449px) {
+        #notifyPolkUser ul {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section id="notifyPolkUser">
+      <div class="internal-polk">
+        <h1>Hey There Polk Classmate!</h1>
+        <p>
+          You must be visiting this site through the link provided in my Profile
+          Information. I'm glad you've decided to check it out! Some quick
+          information about this site:
+        </p>
+        <br />
+        <ul>
+          <li>It is a personal portfolio project done by me,</li>
+          <li>
+            I go by the Alias of Creeper Buddy
+            <br />
+            to remain anonomyous,
+          </li>
+          <li>
+            I made this site for fun and to experiment
+            <br />
+            with what I've learned in coding
+          </li>
+        </ul>
+        <br />
+        <p><strong>Again thank you for visiting. Cheers!</strong></p>
+        <button id="polkContinue" class="button-white">
+          <span class="button-text-white">Explore the Website</span>
+          <span id="btmWhite">Continue</span>
+        </button>
+      </div>
+    </section>
+    <span class="logo-lift-two"></span>
+    <span class="logo-lift"></span>
+    <div class="logo-animate-wrapper">
+      <svg
+        width="292"
+        height="288"
+        viewBox="0 0 292 288"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g id="Logo" style="mix-blend-mode: hard-light">
+          <path
+            id="C"
+            d="M2.2 144.4C2.2 117.2 8.32908 92.8 20.5872 71.2C32.8454 49.3333 49.5005 32.2667 70.5526 20C91.8711 7.73332 115.455 1.59999 141.303 1.59999C171.682 1.59999 198.197 8.93332 220.848 23.6C243.499 38.2667 260.021 59.0667 270.414 86H226.844C219.116 69.2 207.924 56.2667 193.267 47.2C178.877 38.1333 161.556 33.6 141.303 33.6C121.85 33.6 104.396 38.1333 88.9398 47.2C73.4838 56.2667 61.3589 69.2 52.565 86C43.7711 102.533 39.3742 122 39.3742 144.4C39.3742 166.533 43.7711 186 52.565 202.8C61.3589 219.333 73.4838 232.133 88.9398 241.2C104.396 250.267 121.85 254.8 141.303 254.8C161.556 254.8 178.877 250.4 193.267 241.6C207.924 232.533 219.116 219.6 226.844 202.8H270.414C260.021 229.467 243.499 250.133 220.848 264.8C198.197 279.2 171.682 286.4 141.303 286.4C115.455 286.4 91.8711 280.4 70.5526 268.4C49.5005 256.133 32.8454 239.2 20.5872 217.6C8.32908 196 2.2 171.6 2.2 144.4Z"
+            stroke="white"
+            stroke-width="3"
+          ></path>
+          <path
+            id="B"
+            d="M272.192 142.33C275.484 142.85 278.471 144.193 281.156 146.36C283.928 148.527 286.093 151.213 287.652 154.42C289.297 157.627 290.12 161.05 290.12 164.69C290.12 169.283 288.951 173.443 286.612 177.17C284.274 180.81 280.853 183.713 276.35 185.88C271.933 187.96 266.693 189 260.63 189H226.854V98.39H259.331C265.48 98.39 270.72 99.43 275.05 101.51C279.381 103.503 282.629 106.233 284.794 109.7C286.959 113.167 288.041 117.067 288.041 121.4C288.041 126.773 286.569 131.237 283.625 134.79C280.767 138.257 276.956 140.77 272.192 142.33ZM238.676 137.52H258.552C264.095 137.52 268.382 136.22 271.413 133.62C274.444 131.02 275.96 127.423 275.96 122.83C275.96 118.237 274.444 114.64 271.413 112.04C268.382 109.44 264.008 108.14 258.292 108.14H238.676V137.52ZM259.591 179.25C265.48 179.25 270.071 177.863 273.362 175.09C276.653 172.317 278.298 168.46 278.298 163.52C278.298 158.493 276.566 154.55 273.102 151.69C269.638 148.743 265.004 147.27 259.201 147.27H238.676V179.25H259.591Z"
+            stroke="white"
+            stroke-width="3"
+          ></path>
+          <path
+            id="Dot"
+            d="M162.888 145C162.888 156.046 153.94 165 142.902 165C131.864 165 122.916 156.046 122.916 145C122.916 133.954 131.864 125 142.902 125C153.94 125 162.888 133.954 162.888 145Z"
+            stroke="white"
+            stroke-width="3"
+          ></path>
+        </g>
+      </svg>
+    </div>
+    <header>
+      <div class="title-wrapper">
+        <a class="title website" href="/"
+          ><span class="title-span-one">Creeper Buddy</span
+          ><span class="title-span-two">CB</span></a
+        >
+      </div>
+      <a class="style-link website" href="/portfolio/">Portfolio</a>
+      <a class="style-link website" href="/about/">About</a>
+      <a class="style-link website" href="/contact/">Contact</a>
+      <div id="burger-button">
+        <span id="b-one"></span>
+        <span id="b-two"></span>
+        <span id="b-three"></span>
+      </div>
+      <div id="burger-container">
+        <div id="burger-inner-container">
+          <a href="/" class="burger-link green website" id="burger-link-one"
+            >Home</a
+          >
+          <a href="/portfolio/" class="burger-link website" id="burger-link-two"
+            >Portfolio</a
+          >
+          <a href="/about/" class="burger-link website" id="burger-link-three"
+            >About</a
+          >
+          <a href="/contact/" class="burger-link website" id="burger-link-four"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <span class="transition"></span>
+      <div class="background-fix" id="firstScene">
+        <img
+          class="layer"
+          data-depth=".05"
+          width="100%"
+          id="VectorCelestial"
+          alt="Sun Graphic in Parallax Effect"
+          src="/images/Sun.svg"
+        />
+      </div>
+      <section class="section">
+        <ul id="secondScene">
+          <li class="layer" data-depth=".04">
+            <img
+              width="100%"
+              alt="Hero Text in Parallax Effect"
+              src="/images/Text.svg"
+            />
+          </li>
+          <li class="layer" data-depth=".07">
+            <img
+              width="100%"
+              id="VectorCloudSecond"
+              alt="Cloud Graphics in Parallax Effect"
+              src="/images/Clouds Second Layer.svg"
+            />
+          </li>
+          <li class="layer" data-depth=".15">
+            <img
+              width="100%"
+              id="VectorIsland"
+              alt="Island Graphic in Parallax Effect"
+              src="/images/Island.svg"
+            />
+          </li>
+          <li class="layer" data-depth=".16">
+            <img
+              width="100%"
+              id="VectorDrips"
+              alt="Waterfall Graphic in Parallax Effect"
+              src="/images/Water Drips Frame.svg"
+            />
+          </li>
+          <li class="layer" data-depth=".32">
+            <img
+              width="100%"
+              id="VectorCloudFirst"
+              alt="Cloud Graphics in Parallax Effect"
+              src="/images/Clouds First Layer.svg"
+            />
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <noscript>
+        <style>
+          /**
+    * Reinstate scrolling for non-JS clients
+    */
+          .simplebar-content-wrapper {
+            overflow: auto;
+          }
+
+          ::-webkit-scrollbar {
+            display: none;
+          }
+
+          html {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        </style>
+      </noscript>
+      <script src="/js/parallax.js"></script>
+      <script>
+        var firstScene = document.getElementById("firstScene");
+        var firstParallax = new Parallax(firstScene);
+
+        var secondScene = document.getElementById("secondScene");
+        var secondParallax = new Parallax(secondScene);
+      </script>
+      <script src="/js/burgerTwo.js"></script>
+      <script src="/js/polk.js"></script>
+      <script src="/js/themeSelection.js"></script>
+      <script defer src="/js/pageTrans.js"></script>
+    </footer>
+  </body>
+</html>

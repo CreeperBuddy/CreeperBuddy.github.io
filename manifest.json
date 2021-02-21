@@ -1,0 +1,31 @@
+{
+  "short_name": "CB",
+  "name": "Creeper Buddy",
+  "description": "The Creeper Buddy web-app",
+  "icons": [
+    {
+      "src": "/images/logosplashsmall.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/logosplash.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/?source=pwa",
+  "background_color": "#39ca86",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#282b30",
+  "shortcuts": [
+    {
+      "name": "CB | Web Development",
+      "short_name": "Web Development",
+      "description": "I'm a freelance web developer",
+      "url": "/webdev?source=pwa",
+      "icons": [{ "src": "/images/logosplashsmall.png", "sizes": "192x192" }]
+    }
+  ]
+}
