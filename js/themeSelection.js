@@ -84,14 +84,10 @@ if (window.location.pathname == "/contact/") {
   ) {
     // Halloween Content
     document.querySelector(".under-skew").style.backgroundColor = "#4c4789";
-    document.querySelector("#formSuccess").style.backgroundColor = "#857aff";
-    document.querySelector("#formSuccess").style.borderColor = "#857aff";
     document.querySelector("h1.black").innerText = "Hey There! 🦇";
   } else if (dateComparison > christmasStartDate && dateComparison < christmasEndDate) {
     // Christmas Content
     document.querySelector(".under-skew").style.backgroundColor = "#2C8DE8";
-    document.querySelector("#formSuccess").style.backgroundColor = "#6FC9FF";
-    document.querySelector("#formSuccess").style.borderColor = "#6FC9FF";
     document.querySelector("h1.black").innerText = "Hey There! ☃️";
   }
 }
