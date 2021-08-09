@@ -24,7 +24,7 @@ if (window.location.pathname == "/") {
     document.querySelector(".background-fix").style.backgroundImage =
       "linear-gradient(220deg, #1a192c, #eee)";
     document.querySelector(".logo-lift-two").style.backgroundColor = "#25233d";
-  } else if (dateComparison > christmasStartDate &&
+  } else if (dateComparison > christmasStartDate ||
     dateComparison < christmasEndDate) {
     // Christmas Content
     document.getElementById("VectorIsland").src = "/images/Snow Island.svg";
@@ -49,7 +49,7 @@ if (window.location.pathname == "/about/") {
       "url(/images/sbhalloween.svg)";
     document.querySelector(".tech-image").src = "/images/techhalloween.svg";
     document.querySelector("footer").style.backgroundColor = "#857aff";
-  } else if (dateComparison > christmasStartDate &&
+  } else if (dateComparison > christmasStartDate ||
     dateComparison < christmasEndDate) {
     // Christmas Content
     document.querySelector(".under-skew").style.backgroundColor = "#2C8DE8";
@@ -73,7 +73,7 @@ if (
   ) {
     // Halloween Content
     document.querySelector("body").style.backgroundColor = "#4c478999";
-  } else if (dateComparison > christmasStartDate &&
+  } else if (dateComparison > christmasStartDate ||
     dateComparison < christmasEndDate) {
     // Christmas Content
     document.querySelector("body").style.backgroundColor = "#2C8DE899";
@@ -88,7 +88,7 @@ if (window.location.pathname == "/contact/") {
     // Halloween Content
     document.querySelector(".under-skew").style.backgroundColor = "#4c4789";
     document.querySelector("h1.black").innerText = "Hey There! 🦇";
-  } else if (dateComparison > christmasStartDate &&
+  } else if (dateComparison > christmasStartDate ||
     dateComparison < christmasEndDate) {
     // Christmas Content
     document.querySelector(".under-skew").style.backgroundColor = "#2C8DE8";
@@ -114,7 +114,7 @@ if (window.location.pathname == "/portfolio/") {
       "url(/images/create-h.svg)";
      }
     
-  } else if (dateComparison > christmasStartDate &&
+  } else if (dateComparison > christmasStartDate ||
     dateComparison < christmasEndDate) {
     document.querySelector(".under-skew").style.backgroundColor = "#2C8DE8";
     if(typeof(document.querySelector(".p-create")) != 'undefined' && document.querySelector(".p-create") != null){
@@ -133,7 +133,7 @@ if (dateComparison > halloweenStartDate && halloweenEndDate > dateComparison) {
   console.log("Happy Halloween");
   document.querySelector("h1 .green").style.color = "#4c4789";
   document.querySelector(".green").style.color = "#857aff";
-} else if (dateComparison > christmasStartDate &&
+} else if (dateComparison > christmasStartDate ||
     dateComparison < christmasEndDate) {
   // Christmas Content
   console.log("Merry Christler!");
