@@ -1,10 +1,10 @@
 // Creating a Date
 
 const dateComparison = new Date();
-const halloweenStartDate = new Date("10/20") + Date.getFullYear();
-const halloweenEndDate = new Date("11/3") + Date.getFullYear();
-const christmasStartDate = new Date("12/1") + Date.getFullYear();
-const christmasEndDate = new Date("1/5") + (Date.getFullYear() + 1);
+const halloweenStartDate = new Date("10/20") + new Date.getFullYear();
+const halloweenEndDate = new Date("11/3") + new Date.getFullYear();
+const christmasStartDate = new Date("12/1") + new Date.getFullYear();
+const christmasEndDate = new Date("1/5") + (new Date.getFullYear() + 1);
 
 // Checking Page Location
 
