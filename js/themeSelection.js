@@ -1,6 +1,6 @@
 // Creating a Date
 
-const dateComparison = new Date("1/7");
+const dateComparison = new Date("1/3");
 const halloweenStartDate = new Date("10/20");
 const halloweenEndDate = new Date("11/3");
 const christmasStartDate = new Date("12/1");
