@@ -1,6 +1,6 @@
 // Creating a Date
 
-const currentYear = new Date.getFullYear();
+const currentYear = new Date().getFullYear();
 const dateComparison = new Date();
 const halloweenStartDate = new Date("10/20") + currentYear;
 const halloweenEndDate = new Date("11/3") + currentYear;
