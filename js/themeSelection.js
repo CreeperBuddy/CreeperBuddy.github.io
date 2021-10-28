@@ -49,7 +49,6 @@ if (window.location.pathname == "/about/") {
     document.querySelector(".grid-column-two").style.backgroundImage =
       "url(/images/sbhalloween.svg)";
     document.querySelector(".tech-image").src = "/images/techhalloween.svg";
-    document.querySelector("footer").style.backgroundColor = "#857aff";
   } else if (dateComparison > christmasStartDate &&
     christmasEndDate > dateComparison) {
     // Christmas Content
@@ -59,7 +58,6 @@ if (window.location.pathname == "/about/") {
     document.querySelector(".grid-column-two").style.backgroundImage =
       "url(/images/sbchristmas.svg)";
     document.querySelector(".tech-image").src = "/images/techchristmas.svg";
-    document.querySelector("footer").style.backgroundColor = "#6FC9FF";
   }
 }
 
@@ -129,10 +127,12 @@ if (window.location.pathname == "/portfolio/") {
   }
 }
 
-if (dateComparison > halloweenStartDate && halloweenEndDate > dateComparison) {
+if (dateComparison > halloweenStartDate &&
+    halloweenEndDate > dateComparison) {
   // Halloween Content
   console.log("Happy Halloween");
-  document.querySelector("h1 .green").style.color = "#4c4789";
+  if (document.querySelector("h1 .green")) { document.querySelector("h1 .green").style.color = "#4c4789"; }
+  if (document.querySelector("footer") { document.querySelector("footer").style.setProperty('--footera', #4c4789); }
   document.querySelector(".green").style.color = "#857aff";
 } else if (dateComparison > christmasStartDate &&
     christmasEndDate > dateComparison) {
@@ -142,6 +142,7 @@ if (dateComparison > halloweenStartDate && halloweenEndDate > dateComparison) {
   if (document.querySelector("h1 .green")) {
   document.querySelector("h1 .green").style.color = "#2C8DE8";
   }
+  if (document.querySelector("footer") { document.querySelector("footer").style.setProperty('--footera', #2C8DE8); }
 } else {
   console.log("\n \nWelcome to the Creeper Buddy Website! 👋 \nThanks for checking around and seeing how \nI do things as a developer and designer. If \nyou are a developer/designer yourself and \nwant to work on a collaborative project \ntogether, then don't hesitate to contact me \nhere: \n \n https://creeperbuddy.design/contact/ \n \nCheers! 💡 \n \n");
 }
