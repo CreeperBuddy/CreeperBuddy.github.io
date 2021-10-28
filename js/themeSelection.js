@@ -131,7 +131,7 @@ if (dateComparison > halloweenStartDate &&
     halloweenEndDate > dateComparison) {
   // Halloween Content
   console.log("Happy Halloween");
-  if (document.querySelector("h1 .green")) { document.querySelector("h1 .green").style.color = "#4c4789"; }
+  if (document.querySelector("h1.green")) { document.querySelector("h1.green").style.color = "#4c4789"; }
   if (document.querySelector("footer")) { document.querySelector("footer").style.setProperty('--footera', #4c4789); }
   document.querySelector(".green").style.color = "#857aff";
 } else if (dateComparison > christmasStartDate &&
@@ -139,8 +139,8 @@ if (dateComparison > halloweenStartDate &&
   // Christmas Content
   console.log("Merry Christler!");
   document.querySelector(".green").style.color = "#2C8DE8";
-  if (document.querySelector("h1 .green")) {
-  document.querySelector("h1 .green").style.color = "#2C8DE8";
+  if (document.querySelector("h1.green")) {
+  document.querySelector("h1.green").style.color = "#2C8DE8";
   }
   if (document.querySelector("footer") { document.querySelector("footer").style.setProperty('--footera', #2C8DE8); }
 } else {
