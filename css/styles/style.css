@@ -506,7 +506,7 @@ footer {
 
 footer::after {
   content: "";
-  background-color: var(--footera);
+  background-color: #1c1d21;
   width: 100%;
   height: 100%;
   z-index: -1;
@@ -518,7 +518,7 @@ footer::after {
 
 footer::before {
   content: "";
-  background-color: #17ca96;
+  background-color: var(--footera);
   width: 100%;
   height: 100%;
   z-index: -2;
