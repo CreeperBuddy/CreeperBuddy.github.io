@@ -1,3 +1,8 @@
+// Console Greeting
+console.log(
+  "\n \nWelcome to the Creeper Buddy Website! 👋 \nThanks for checking around and seeing how \nI do things as a developer and designer. If \nyou are a developer/designer yourself and \nwant to work on a collaborative project \ntogether, then don't hesitate to contact me \nhere: \n \n https://creeperbuddy.design/contact/ \n \nCheers! 💡 \n \n"
+);
+
 // Creating a Date
 
 const currentYear = new Date().getFullYear();
@@ -6,6 +11,7 @@ const halloweenStartDate = new Date(`10/10/${currentYear}`);
 const halloweenEndDate = new Date(`11/3/${currentYear}`);
 const christmasStartDate = new Date(`12/1/${currentYear}`);
 const christmasEndDate = new Date(`1/5/${currentYear + 1}`);
+
 
 // Checking Page Location
 
@@ -127,22 +133,24 @@ if (window.location.pathname == "/portfolio/") {
   }
 }
 
-if (dateComparison > halloweenStartDate &&
-    halloweenEndDate > dateComparison) {
+if (dateComparison > halloweenStartDate && halloweenEndDate > dateComparison) {
   // Halloween Content
   console.log("Happy Halloween");
-  if (document.querySelector("h1.green")) { document.querySelector("h1.green").style.color = "#4c4789"; }
-  if (document.querySelector("footer")) { document.querySelector("footer").style.setProperty('--footera', '#4c4789'); }
+  if (document.querySelector("h1 .green")) {
+    document.querySelector("h1 .green").style.color = "#4c4789";
+  }
+  if (document.querySelector("footer")) {
+    document.querySelector("footer").style.setProperty("--footera", "#4c4789");
+  }
   document.querySelector(".green").style.color = "#857aff";
-} else if (dateComparison > christmasStartDate &&
-    christmasEndDate > dateComparison) {
+} else if (
+  dateComparison > christmasStartDate &&
+  christmasEndDate > dateComparison
+) {
   // Christmas Content
   console.log("Merry Christler!");
-  document.querySelector(".green").style.color = "#2C8DE8";
-  if (document.querySelector("h1.green")) {
-  document.querySelector("h1.green").style.color = "#2C8DE8";
+  document.querySelector(".green").style.color = "#2C8DE8 !important";
+  if (document.querySelector("footer")) {
+    document.querySelector("footer").style.setProperty("--footera", "#2C8DE8");
   }
-  if (document.querySelector("footer")) { document.querySelector("footer").style.setProperty('--footera', '#2C8DE8'); }
-} else {
-  console.log("\n \nWelcome to the Creeper Buddy Website! 👋 \nThanks for checking around and seeing how \nI do things as a developer and designer. If \nyou are a developer/designer yourself and \nwant to work on a collaborative project \ntogether, then don't hesitate to contact me \nhere: \n \n https://creeperbuddy.design/contact/ \n \nCheers! 💡 \n \n");
 }
