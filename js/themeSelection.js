@@ -156,5 +156,4 @@ if (dateComparison > halloweenStartDate && halloweenEndDate > dateComparison) {
     document.querySelector("footer").style.setProperty("--footera", "#2C8DE8");
   }
   document.querySelector(".green").style.color = "#2C8DE8";
-  }
 }
