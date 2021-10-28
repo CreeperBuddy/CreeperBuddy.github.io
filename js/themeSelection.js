@@ -132,7 +132,7 @@ if (dateComparison > halloweenStartDate &&
   // Halloween Content
   console.log("Happy Halloween");
   if (document.querySelector("h1.green")) { document.querySelector("h1.green").style.color = "#4c4789"; }
-  if (document.querySelector("footer")) { document.querySelector("footer").style.setProperty('--footera', #4c4789); }
+  if (document.querySelector("footer")) { document.querySelector("footer").style.setProperty('--footera', '#4c4789'); }
   document.querySelector(".green").style.color = "#857aff";
 } else if (dateComparison > christmasStartDate &&
     christmasEndDate > dateComparison) {
@@ -142,7 +142,7 @@ if (dateComparison > halloweenStartDate &&
   if (document.querySelector("h1.green")) {
   document.querySelector("h1.green").style.color = "#2C8DE8";
   }
-  if (document.querySelector("footer") { document.querySelector("footer").style.setProperty('--footera', #2C8DE8); }
+  if (document.querySelector("footer") { document.querySelector("footer").style.setProperty('--footera', '#2C8DE8'); }
 } else {
   console.log("\n \nWelcome to the Creeper Buddy Website! 👋 \nThanks for checking around and seeing how \nI do things as a developer and designer. If \nyou are a developer/designer yourself and \nwant to work on a collaborative project \ntogether, then don't hesitate to contact me \nhere: \n \n https://creeperbuddy.design/contact/ \n \nCheers! 💡 \n \n");
 }
