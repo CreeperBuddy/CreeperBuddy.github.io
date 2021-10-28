@@ -149,8 +149,12 @@ if (dateComparison > halloweenStartDate && halloweenEndDate > dateComparison) {
 ) {
   // Christmas Content
   console.log("Merry Christler!");
-  document.querySelector(".green").style.color = "#2C8DE8 !important";
+  if (document.querySelector("h1 .green")) {
+    document.querySelector("h1 .green").style.color = "#2C8DE8";
+  }
   if (document.querySelector("footer")) {
     document.querySelector("footer").style.setProperty("--footera", "#2C8DE8");
+  }
+  document.querySelector(".green").style.color = "#2C8DE8";
   }
 }
