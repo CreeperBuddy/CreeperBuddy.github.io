@@ -3,7 +3,12 @@ console.log(
   "\n \nWelcome to the Creeper Buddy Website! 👋 \nThanks for checking around and seeing how \nI do things as a developer and designer. If \nyou are a developer/designer yourself and \nwant to work on a collaborative project \ntogether, then don't hesitate to contact me \nhere: \n \n https://creeperbuddy.github.io/contact/ \n \nCheers! 💡 \n \n"
 );
 
-alert("You're gonna have a bad time");
+r = /./
+    r.toString = function () {
+        document.title = '1'
+    }
+    console.log('%c', r);
+
 
 // Creating a Date
 
