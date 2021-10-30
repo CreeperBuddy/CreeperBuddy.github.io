@@ -3,18 +3,16 @@ console.log(
   "\n \nWelcome to the Creeper Buddy Website! 👋 \nThanks for checking around and seeing how \nI do things as a developer and designer. If \nyou are a developer/designer yourself and \nwant to work on a collaborative project \ntogether, then don't hesitate to contact me \nhere: \n \n https://creeperbuddy.github.io/contact/ \n \nCheers! 💡 \n \n"
 );
 
-const chance = function getRandomInt()
-  Math.round(Math.random() * 50);
+function getRandomInt(chance) {
+  chance = Math.round(Math.random() * 50);
+  switch (chance) {
+    case 50: console.warn("You're gonna have a bad time");
+      break;
+    default: null;
+  }
 }
 
 getRandomInt();
-
-if () {
-let r = /./;
-    r.toString = function () {
-        document.warn = "You\'re gonna have a bad time";
-    }
-}
 
 
 // Creating a Date
