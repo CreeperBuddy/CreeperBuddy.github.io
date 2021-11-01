@@ -3,6 +3,7 @@ console.log(
   "\n \nWelcome to the Creeper Buddy Website! 👋 \nThanks for checking around and seeing how \nI do things as a developer and designer. If \nyou are a developer/designer yourself and \nwant to work on a collaborative project \ntogether, then don't hesitate to contact me \nhere: \n \n https://creeperbuddy.github.io/contact/ \n \nCheers! 💡 \n \n"
 );
 
+/*
 let mathRandom = Math.round(Math.random() * 3);
 
 function getRandomInt(chance) {
@@ -14,14 +15,14 @@ function getRandomInt(chance) {
 }
 
 getRandomInt(mathRandom);
-
+*/
 
 // Creating a Date
 
 const currentYear = new Date().getFullYear();
 const dateComparison = new Date();
 const halloweenStartDate = new Date(`10/10/${currentYear}`);
-const halloweenEndDate = new Date(`11/3/${currentYear}`);
+const halloweenEndDate = new Date(`10/31/${currentYear}`);
 const christmasStartDate = new Date(`12/1/${currentYear}`);
 const christmasEndDate = new Date(`1/5/${currentYear + 1}`);
 
